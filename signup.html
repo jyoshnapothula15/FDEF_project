@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up — PortfolioConnect</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page">
+
+  <nav class="navbar">
+    <a href="index.html" class="brand">portfolio<span>connect</span></a>
+    <ul class="nav-links" id="nav-session"></ul>
+  </nav>
+
+  <main class="auth-shell">
+    <div class="form-card">
+      <h2>Create your profile</h2>
+      <p class="sub">Sign up to build your own portfolio and start applying to vacancies.</p>
+
+      <div id="form-message" class="alert" style="display:none;"></div>
+
+      <form id="signup-form">
+        <div class="field">
+          <label for="signup-name">Full name</label>
+          <input type="text" id="signup-name" required>
+        </div>
+        <div class="field">
+          <label for="signup-email">Email</label>
+          <input type="email" id="signup-email" required>
+        </div>
+        <div class="field">
+          <label for="signup-password">Password</label>
+          <input type="password" id="signup-password" required minlength="4">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+      </form>
+
+      <div class="form-foot">Already have an account? <a href="login.html">Log in</a></div>
+    </div>
+  </main>
+
+  <footer>Built with HTML, CSS &amp; JavaScript only · Data stored in your browser's Local Storage</footer>
+</div>
+
+<script src="auth.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    renderNavSession("nav-session");
+    document.getElementById("signup-form").addEventListener("submit", handleSignup);
+  });
+</script>
+</body>
+</html>

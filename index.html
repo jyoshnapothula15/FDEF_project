@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PortfolioConnect — Build Your Profile, Get Matched to Jobs</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page">
+
+  <nav class="navbar">
+    <div class="brand">portfolio<span>connect</span></div>
+    <ul class="nav-links" id="nav-session"></ul>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Portfolio &amp; Placement Platform · SDC Project</div>
+        <h1>Build your portfolio.<br>Get matched to jobs.</h1>
+        <p>
+          Sign up to create your own profile — About, Skills and Projects — then browse
+          open vacancies and apply. The site admin reviews your profile, posts new
+          openings, and notifies you directly when a vacancy fits what you know.
+        </p>
+        <div class="hero-actions">
+          <a href="signup.html" class="btn btn-primary">Create your profile</a>
+          <a href="login.html" class="btn btn-ghost">Login</a>
+        </div>
+      </div>
+      <div class="hero-portrait">Your<br>Portfolio</div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <div class="kicker">How it works</div>
+        <h2>Two modules, one platform</h2>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>User Module</h3>
+          <p>Every user builds and edits their own portfolio (About, Skills, Projects), browses vacancies posted by the admin, applies to the ones they want, and sees notifications when the admin flags a good match for them.</p>
+        </div>
+        <div class="card">
+          <h3>Admin Module</h3>
+          <p>The admin posts and manages job vacancies, browses every user's portfolio, reviews and updates the status of applications, and can directly notify a specific user about a vacancy that matches their skills.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>PortfolioConnect · Build your profile. Get discovered. Land the role.</footer>
+</div>
+
+<script src="auth.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => renderNavSession("nav-session"));
+</script>
+</body>
+</html>

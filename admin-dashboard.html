@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard — PortfolioConnect</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page">
+
+  <nav class="navbar">
+    <a href="index.html" class="brand">portfolio<span>connect</span> <small style="color:var(--text-muted); font-size:0.8rem;">/ admin</small></a>
+    <ul class="nav-links" id="nav-session"></ul>
+  </nav>
+
+  <div class="dashboard">
+    <aside class="sidebar">
+      <div class="side-title">Admin Module</div>
+      <button data-panel="panel-vacancies" class="active">Vacancies</button>
+      <button data-panel="panel-users">Users &amp; Portfolios</button>
+      <button data-panel="panel-applications">Applications</button>
+      <button data-panel="panel-notify">Notify a User</button>
+    </aside>
+
+    <div class="content">
+
+      <!-- VACANCIES -->
+      <section class="panel active" id="panel-vacancies">
+        <div class="section-head">
+          <div class="kicker">Manage</div>
+          <h2>Job Vacancies</h2>
+        </div>
+        <form id="vacancy-form" class="inline-form stacked">
+          <div class="field">
+            <label for="vacancy-title">Job title</label>
+            <input type="text" id="vacancy-title" required>
+          </div>
+          <div class="field">
+            <label for="vacancy-company">Company</label>
+            <input type="text" id="vacancy-company" required>
+          </div>
+          <div class="field">
+            <label for="vacancy-location">Location</label>
+            <input type="text" id="vacancy-location" placeholder="Remote / City">
+          </div>
+          <div class="field">
+            <label for="vacancy-skills">Required skills (comma-separated)</label>
+            <input type="text" id="vacancy-skills" placeholder="HTML, CSS, JavaScript">
+          </div>
+          <div class="field">
+            <label for="vacancy-desc">Description</label>
+            <textarea id="vacancy-desc" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Post vacancy</button>
+        </form>
+        <div id="vacancies-list"></div>
+      </section>
+
+      <!-- USERS -->
+      <section class="panel" id="panel-users">
+        <div class="section-head">
+          <div class="kicker">Directory</div>
+          <h2>Users &amp; Their Portfolios</h2>
+        </div>
+        <div id="users-list"></div>
+      </section>
+
+      <!-- APPLICATIONS -->
+      <section class="panel" id="panel-applications">
+        <div class="section-head">
+          <div class="kicker">Review</div>
+          <h2>Applications</h2>
+        </div>
+        <div id="applications-list"></div>
+      </section>
+
+      <!-- NOTIFY -->
+      <section class="panel" id="panel-notify">
+        <div class="section-head">
+          <div class="kicker">Match &amp; notify</div>
+          <h2>Notify a User About a Vacancy</h2>
+        </div>
+        <div id="notify-status" class="alert" style="display:none; max-width:480px;"></div>
+        <form id="notify-form" class="card" style="max-width:480px;">
+          <div class="field">
+            <label for="notify-user">User</label>
+            <select id="notify-user"></select>
+          </div>
+          <div class="field">
+            <label for="notify-vacancy">Vacancy</label>
+            <select id="notify-vacancy"></select>
+          </div>
+          <div class="field">
+            <label for="notify-message">Message</label>
+            <textarea id="notify-message" placeholder="This role looks like a great fit for your skills — take a look!" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send notification</button>
+        </form>
+      </section>
+
+    </div>
+  </div>
+
+  <footer>Built with HTML, CSS &amp; JavaScript only · Data stored in your browser's Local Storage</footer>
+</div>
+
+<script src="auth.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>

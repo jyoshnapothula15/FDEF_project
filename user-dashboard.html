@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Dashboard — PortfolioConnect</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page">
+
+  <nav class="navbar">
+    <a href="index.html" class="brand">portfolio<span>connect</span></a>
+    <ul class="nav-links" id="nav-session"></ul>
+  </nav>
+
+  <div class="dashboard">
+    <aside class="sidebar">
+      <div class="side-title">User Module</div>
+      <button data-panel="panel-about" class="active">My Portfolio</button>
+      <button data-panel="panel-vacancies">Browse Vacancies</button>
+      <button data-panel="panel-applications">My Applications</button>
+      <button data-panel="panel-notifications">Notifications <span id="notif-badge" class="badge" style="display:none;"></span></button>
+    </aside>
+
+    <div class="content">
+
+      <!-- MY PORTFOLIO -->
+      <section class="panel active" id="panel-about">
+        <div class="section-head">
+          <div class="kicker">Edit</div>
+          <h2>My Portfolio</h2>
+        </div>
+
+        <form id="about-form" class="card" style="max-width:520px; margin-bottom:2rem;">
+          <div class="field">
+            <label for="about-name">Name</label>
+            <input type="text" id="about-name" required>
+          </div>
+          <div class="field">
+            <label for="about-role">Role / Title (e.g. Aspiring Frontend Developer)</label>
+            <input type="text" id="about-role">
+          </div>
+          <div class="field">
+            <label for="about-bio">About me</label>
+            <textarea id="about-bio" placeholder="A short summary about you"></textarea>
+          </div>
+          <div class="field">
+            <label for="about-resume">Resume link (optional)</label>
+            <input type="url" id="about-resume" placeholder="https://drive.google.com/...">
+          </div>
+          <button type="submit" class="btn btn-primary">Save changes</button>
+          <span id="about-status" style="margin-left:0.75rem; color:var(--success); transition:opacity .3s;"></span>
+        </form>
+
+        <h3>Skills</h3>
+        <form id="skill-form" class="inline-form">
+          <div class="field">
+            <label for="skill-name">Skill name</label>
+            <input type="text" id="skill-name" placeholder="e.g. JavaScript" required>
+          </div>
+          <div class="field" style="max-width:140px;">
+            <label for="skill-level">Level (%)</label>
+            <input type="number" id="skill-level" min="1" max="100" placeholder="80" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Add skill</button>
+        </form>
+        <div id="skills-list" style="margin-bottom:2rem;"></div>
+
+        <h3>Projects</h3>
+        <form id="project-form" class="inline-form stacked">
+          <div class="field">
+            <label for="project-title">Title</label>
+            <input type="text" id="project-title" required>
+          </div>
+          <div class="field">
+            <label for="project-desc">Description</label>
+            <textarea id="project-desc" required></textarea>
+          </div>
+          <div class="field">
+            <label for="project-link">Link (optional)</label>
+            <input type="url" id="project-link" placeholder="https://github.com/you/project">
+          </div>
+          <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Add project</button>
+        </form>
+        <div id="projects-list"></div>
+      </section>
+
+      <!-- BROWSE VACANCIES -->
+      <section class="panel" id="panel-vacancies">
+        <div class="section-head">
+          <div class="kicker">Opportunities</div>
+          <h2>Browse Vacancies</h2>
+        </div>
+        <p>Skills highlighted in teal are ones already on your profile.</p>
+        <div id="vacancies-list"></div>
+      </section>
+
+      <!-- MY APPLICATIONS -->
+      <section class="panel" id="panel-applications">
+        <div class="section-head">
+          <div class="kicker">Tracker</div>
+          <h2>My Applications</h2>
+        </div>
+        <div id="my-applications-list"></div>
+      </section>
+
+      <!-- NOTIFICATIONS -->
+      <section class="panel" id="panel-notifications">
+        <div class="section-head">
+          <div class="kicker">From the admin</div>
+          <h2>Notifications</h2>
+        </div>
+        <div id="notifications-list"></div>
+      </section>
+
+    </div>
+  </div>
+
+  <footer>Built with HTML, CSS &amp; JavaScript only · Data stored in your browser's Local Storage</footer>
+</div>
+
+<script src="auth.js"></script>
+<script src="user.js"></script>
+</body>
+</html>
